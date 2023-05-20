@@ -1,2 +1,0 @@
-# VinuBurn
-VinuBurn

@@ -1,0 +1,38 @@
+.waveText {
+    background: #FFCC00;
+    background: linear-gradient(to right, #FFCC00 0%, #FF6F00 50%, #FF0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 180%;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+.tableText {
+    background: #006AFF;
+    background: linear-gradient(to right, #006AFF 36%, #FF6F00 69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500%;
+    animation: animate 5s linear infinite;
+}
+
+.latestBurnsLabel {
+    background: #FF0505;
+    background: linear-gradient(to right, #FF0505 0%, #FFCC00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500%;
+    animation: animate 10s linear infinite;
+    text-align: center;
+}
