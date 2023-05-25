@@ -66,7 +66,7 @@ export default function BurnTable() {
   }, []);
   return (
     <TableContainer component={Paper} sx={{maxWidth: 750, ml: 'auto', mr: 'auto'}}>
-      <Table sx={{minWidth: 250}} aria-label="simple table">
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Amount</TableCell>
