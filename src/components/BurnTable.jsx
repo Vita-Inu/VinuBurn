@@ -65,33 +65,31 @@ export default function BurnTable() {
     e();
   }, []);
   return (
-    <TableContainer component={Paper} sx={{maxWidth: 750, ml: 'auto', mr: 'auto'}}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Amount</TableCell>
-            <TableCell align="right">Value</TableCell>
-            <TableCell align="right">Date</TableCell>
-            <TableCell align="right">Transaction Hash</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{'&:last-child td, &:last-child th': {border: 0}}}
-            >
-              <TableCell component="th" scope="row">
-                {row.amount}
-              </TableCell>
-              <TableCell align="right">{row.value}</TableCell>
-              <TableCell align="right">{row.date}</TableCell>
-              <TableCell align="right">{row.txid}</TableCell>
+      <TableContainer component={Paper} sx={{ maxWidth: '100%', marginLeft: 'auto', marginRight: 'auto' }}>
+        <Table sx={{ minWidth: 500 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Amount</TableCell>
+              <TableCell align="right">Value</TableCell>
+              <TableCell align="right">Date</TableCell>
+              <TableCell align="right">Transaction Hash</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell component="th" scope="row">
+                    {row.amount}
+                  </TableCell>
+                  <TableCell align="right">{row.value}</TableCell>
+                  <TableCell align="right">{row.date}</TableCell>
+                  <TableCell align="right">{row.txid}</TableCell>
+                </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+
   );
 }
 function formatDate(date) {

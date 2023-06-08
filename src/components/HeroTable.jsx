@@ -8,6 +8,16 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import {getHeroTableData} from '../api/CoinGecko';
 import '../css/RainbowText.css';
+const styles = {
+  tableContainer: {
+    maxWidth: '100%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  table: {
+    width: '100%',
+  },
+};
 function createData(title, value) {
   return {title, value};
 }
@@ -31,30 +41,27 @@ export default function HeroTable() {
     e();
   }, []);
   return (
-    <TableContainer component={Paper} sx={{maxWidth: 700}}>
-      <Table sx={{minWidth: 650}} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Title</TableCell>
-            <TableCell align="right">Value</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{'&:last-child td, &:last-child th': {border: 0}}}
-            >
-              <TableCell component="th" scope="row">
-                {row.title}
-              </TableCell>
-              <TableCell
-                align="right"
-                className="tableText"><b>{row.value}</b></TableCell>
+      <TableContainer component={Paper} sx={styles.tableContainer}>
+        <Table sx={styles.table} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Title</TableCell>
+              <TableCell align="right">Value</TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+                <TableRow key={row.name}>
+                  <TableCell component="th" scope="row">
+                    {row.title}
+                  </TableCell>
+                  <TableCell align="right" className="tableText">
+                    <b>{row.value}</b>
+                  </TableCell>
+                </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
   );
 }
