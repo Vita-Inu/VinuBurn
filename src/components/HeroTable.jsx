@@ -32,7 +32,7 @@ export default function HeroTable() {
       setRows([
         createData('Total Supply', numberFormatter.format(d.totalSupply)),
         createData('Circulating Supply', numberFormatter.format(d.circulatingSupply)),
-        createData('Burned', numberFormatter.format('4522454563')),
+        createData('Burned', numberFormatter.format(d.burned)),
         createData('Market Cap', `$ ${numberFormatter.format(d.marketCap)}`),
         createData('Fully Diluted Market Cap', `$ ${numberFormatter.format(d.fullyDilutedMarketCap)}`),
         createData('Price', `$ ${d.price.toFixed(11)}`),
